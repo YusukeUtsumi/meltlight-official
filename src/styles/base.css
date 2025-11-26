@@ -1,0 +1,134 @@
+    /* Global layout & typography */
+
+/* Reset & base */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&display=swap');
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background: #050506;  /* ページと同じ背景色にしておくと安心 */
+}
+
+.page {
+    min-height: 100vh;
+    background: #050506;
+    color: #f5f5f5;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont,
+        "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+body, html, .page {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 300;
+}
+
+/* Header */
+
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 32px;
+    font-size: 0.9rem;
+}
+
+.site-logo .logo-mark {
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+.site-nav {
+    display: flex;
+    gap: 16px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.11em;
+}
+
+.site-nav a {
+    text-decoration: none;
+    color: rgba(245, 245, 245, 0.78);
+}
+
+.site-nav a:hover {
+    color: #ffffff;
+}
+
+/* Sections */
+
+.site-main {
+    flex: 1;
+}
+
+.section {
+    padding: 64px 24px;
+}
+
+.section-inner {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    margin-bottom: 24px;
+    opacity: 0.7;
+}
+
+.section-body {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    opacity: 0.9;
+}
+
+/* Footer */
+
+.site-footer {
+    padding: 16px 24px 24px;
+    font-size: 0.75rem;
+    opacity: 0.6;
+}
+
+.footer-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.footer-name {
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+}
+
+.footer-role {
+    font-size: 0.75rem;
+}
+
+/* Mobile */
+
+@media (max-width: 720px) {
+    .site-header {
+        padding: 12px 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .site-nav {
+        flex-wrap: wrap;
+        row-gap: 4px;
+    }
+
+    .section {
+        padding: 48px 16px;
+    }
+}

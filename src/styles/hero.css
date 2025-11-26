@@ -1,0 +1,179 @@
+.hero-section {
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+/* ===========================
+   HeroVeil — Layout
+   =========================== */
+
+.hero-veil-root {
+    position: relative;
+    min-height: min(80vh, 720px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 64px 16px;
+}
+
+/* ===========================
+   MeltLight symbol（ロゴ）
+   =========================== */
+
+.hero-symbol {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.hero-symbol-img {
+    width: clamp(260px, 58vw, 520px);
+    opacity: 0.08; /* ほぼ“影”レベルの薄さ */
+    filter: blur(0.4px);
+    mix-blend-mode: screen; /* 背景をほとんど崩さない */
+}
+
+/* ===========================
+   Veil layer（ロゴの上で呼吸）
+   =========================== */
+
+.hero-veil-layer {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+
+    /* ★ サイズ指定（いちばん重要） */
+    width: 620px;
+    height: 620px;
+
+    /* ★ Heroの完全中央に置く */
+    left: 33%;
+    top: 17%;
+    transform: translate(-50%, -52%);
+
+    /* 中央付近にだけローズゴールドを集中させる */
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(229, 191, 186, 0.29),
+            rgba(229, 191, 186, 0.10) 42%,
+            transparent 75%
+        );
+
+    filter: blur(40px);
+    opacity: 0.9;
+    mix-blend-mode: screen;
+
+    animation: veil-breathe-soft 32s ease-in-out infinite alternate;
+}
+
+
+/* ===========================
+   Poem content
+   =========================== */
+
+.hero-veil-content {
+    position: relative;
+    max-width: 760px;
+    text-align: center;
+    padding: 24px 16px;
+    z-index: 2;
+}
+    .hero-veil-line {
+    display: block;
+    opacity: 0;
+    transform: translateY(6px);
+    animation: hero-line-fade 1.6s ease-out forwards;
+}
+
+/* 詩ブロックのベース */
+.hero-veil-lines {
+    margin: 0;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 20px;  /* 行間の間隔 */
+    font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+}
+
+/* 1行目（呼吸の間） */
+.hero-veil-line-main {
+    font-weight: 300;
+    font-size: clamp(1.35rem, 2.8vw, 1.95rem);
+    letter-spacing: 0.08em;
+    line-height: 2.23;
+    opacity: 0.95;
+    animation-delay: 0.1s;
+}
+
+/* ===========================
+   Animations
+   =========================== */
+
+/* ベールの「ほぼ止まっている」呼吸 */
+@keyframes veil-breathe-soft {
+    0% {
+        transform: translate3d(0, -1%, 0) scale(1.01);
+        opacity: 0.88;
+    }
+    50% {
+        transform: translate3d(0, 1%, 0) scale(1.025);
+        opacity: 0.82;
+    }
+    100% {
+        transform: translate3d(0, 0, 0) scale(1.02);
+        opacity: 0.86;
+    }
+}
+
+/* テキストの静かなフェードイン */
+@keyframes hero-line-fade {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===========================
+   Mobile tweaks
+   =========================== */
+
+@media (max-width: 720px) {
+    .hero-veil-layer {
+    /* ★ サイズ指定（いちばん重要） */
+    width: 320px;
+    height: 320px;
+    /* ★ Heroの完全中央に置く */
+    left: 3%;
+    top: 20%;
+    transform: translate(-50%, -52%);
+    }
+
+    .hero-veil-root {
+        min-height: 70vh;
+        padding: 48px 16px;
+    }
+
+    .hero-symbol-img {
+        width: clamp(220px, 70vw, 420px);
+        opacity: 0.07; /* モバイルは少しだけ濃くしてもOK */
+    }
+
+    .hero-veil-content {
+        padding: 16px 8px;
+    }
+
+    .hero-veil-line-main,
+    .hero-veil-line-sub {
+        line-height: 1.8;
+        letter-spacing: 0.04em;
+    }
+}
