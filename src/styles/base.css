@@ -35,12 +35,35 @@ body, html, .page {
     font-size: 0.9rem;
 }
 
-.site-logo .logo-mark {
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    font-size: 0.85rem;
-    opacity: 0.8;
+/* ==========================
+　   MELTLIGHT Wordmark Logo
+   ========================== */
+
+.logo-wordmark {
+    font-family: "Cormorant Garamond", "Times New Roman", serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+    letter-spacing: 0.32em;
+
+    color: #E8C5B8;
+
+    /* 金属感のあるローズゴールドの光 */
+    text-shadow:
+        0 0 6px rgba(232, 197, 184, 0.55),
+        0 0 14px rgba(232, 197, 184, 0.25),
+        0 2px 4px rgba(0, 0, 0, 0.45);
+
+    opacity: 0.9;
+    transition: opacity 0.35s ease-out;
 }
+
+.logo-wordmark:hover {
+    opacity: 1;
+    text-shadow:
+        0 0 10px rgba(232, 197, 184, 0.65),
+        0 0 20px rgba(232, 197, 184, 0.35);
+}
+
 
 .site-nav {
     display: flex;
@@ -112,6 +135,28 @@ body, html, .page {
 .footer-role {
     font-size: 0.75rem;
 }
+
+.footer-social {
+    margin-top: 16px;
+    display: flex;
+    gap: 20px;
+}
+
+.footer-social a {
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    opacity: 0.55;
+    transition: 0.3s ease-out;
+    color: rgba(255,255,255,0.75);
+}
+
+.footer-social a:hover {
+    opacity: 0.9;
+    text-shadow:
+        0 0 6px rgba(232,197,184,0.35),
+        0 0 12px rgba(232,197,184,0.2);
+}
+
 
 /* Mobile */
 

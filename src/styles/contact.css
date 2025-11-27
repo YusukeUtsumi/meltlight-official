@@ -1,29 +1,98 @@
-.contact-section .section-body {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    max-width: 520px;
+/* =====================================
+   Contact / Connect Section
+   ===================================== */
+
+.contact-section {
+    padding-top: clamp(120px, 24vh, 260px);
+    padding-bottom: clamp(180px, 70vh, 400px);
+
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 1.6s ease-out, transform 1.6s ease-out;
 }
 
+.contact-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.contact-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-body {
+    margin-top: 28px;
+}
+
+.contact-text {
+    font-family: "Cormorant Garamond", "Times New Roman", serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.24em;
+    font-size: 0.98rem;
+    line-height: 1.9;
+    opacity: 0.9;
+    margin-bottom: 32px;
+}
+
+/* ボタン */
 .contact-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 10px 20px;
+    padding: 14px 72px;
     border-radius: 999px;
-    border: 1px solid rgba(255, 255, 255, 0.32);
-    font-size: 0.85rem;
-    letter-spacing: 0.14em;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    background: radial-gradient(
+            circle at 0% 0%,
+            rgba(232, 197, 184, 0.24),
+            transparent 55%
+        ),
+        linear-gradient(
+            90deg,
+            rgba(18, 18, 18, 0.98),
+            rgba(26, 26, 26, 0.98)
+        );
+    color: #f5f5f5;
+    font-size: 0.82rem;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
     text-decoration: none;
-    color: #f5f5f5;
-    background: radial-gradient(
-        circle at top left,
-        rgba(255, 255, 255, 0.12),
-        rgba(255, 255, 255, 0.02)
-    );
+    cursor: pointer;
+    transition: transform 0.35s ease-out, box-shadow 0.35s ease-out,
+        border-color 0.35s ease-out, background 0.35s ease-out;
 }
 
 .contact-button:hover {
-    border-color: rgba(255, 255, 255, 0.56);
+    transform: translateY(-2px);
+    box-shadow:
+        0 0 18px rgba(232, 197, 184, 0.26),
+        0 14px 36px rgba(0, 0, 0, 0.65);
+    border-color: rgba(232, 197, 184, 0.8);
+}
+
+.contact-button:active {
+    transform: translateY(0);
+    box-shadow:
+        0 0 10px rgba(232, 197, 184, 0.22),
+        0 8px 24px rgba(0, 0, 0, 0.7);
+}
+
+/* Mobile */
+@media (max-width: 720px) {
+    .contact-section {
+        padding-top: 20vh;
+        padding-bottom: 24vh;
+    }
+
+    .contact-text {
+        font-size: 0.94rem;
+        line-height: 1.8;
+    }
+
+    .contact-button {
+        width: 100%;
+        padding: 14px 0;
+    }
 }

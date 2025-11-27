@@ -1,11 +1,15 @@
 ---
 import HeroVeil from "../components/HeroVeil.jsx";
+import Philosophy from "../components/Philosophy.jsx";
+import Atelier from "../components/Atelier.jsx";
+import AboutMe from "../components/AboutMe.jsx";
+import Contact from "../components/Contact.jsx";
+
 import "../styles/base.css";
 import "../styles/hero.css";
+import "../styles/philosophy.css";
+import "../styles/atelier.css";
 import "../styles/about.css";
-import "../styles/works.css";
-import "../styles/sa.css";
-import "../styles/notice.css";
 import "../styles/contact.css";
 ---
 
@@ -24,14 +28,11 @@ import "../styles/contact.css";
         <div class="page">
             <header class="site-header">
                 <div class="site-logo">
-                    <span class="logo-mark">MeltLight</span>
+                    <span class="logo-wordmark">MeltLight</span>
                 </div>
                 <nav class="site-nav">
-                    <a href="#about">About</a>
-                    <a href="#works">Works</a>
-                    <a href="#silentguard-agentflow">SilentGuard &amp; AgentFlow</a>
-                    <a href="#notice">Notice</a>
-                    <a href="#contact">Connect</a>
+                    <a href="https://meltlight.art/" target="_blank" rel="noreferrer">Portfolio</a>
+                    <a href="https://tally.so/r/mRXxjj" target="_blank" rel="noreferrer">Contact</a>
                 </nav>
             </header>
 
@@ -41,149 +42,25 @@ import "../styles/contact.css";
                     <HeroVeil client:load />
                 </section>
 
-                {/* About */}
-                <section id="about" class="section about-section">
-                    <div class="section-inner">
-                        <h2 class="section-title">About</h2>
-                        <div class="section-body">
-                            <p class="role">
-                                AI Concept Artist / Poetic Interface Artist / Conceptual Engineer
-                            </p>
-                            <p>
-                                I work with light, boundaries, and veils — designing interfaces that
-                                breathe like poetry rather than machinery.
-                            </p>
-                            <p>
-                                My practice emerges from the quiet light of Kushiro, where
-                                visibility and obscurity are always negotiating with each other.
-                            </p>
-                        </div>
-                    </div>
-                </section>
+                <Philosophy client:load />
 
-                {/* Works */}
-                <section id="works" class="section works-section">
-                    <div class="section-inner">
-                        <h2 class="section-title">Selected Works</h2>
-                        <div class="works-grid">
-                            <article class="work-item">
-                                <div class="work-thumb placeholder-thumb"></div>
-                                <h3 class="work-title">Boundary</h3>
-                                <p class="work-caption">
-                                    “Where memory meets the edge of itself.”
-                                </p>
-                            </article>
+                <Atelier client:load />
 
-                            <article class="work-item">
-                                <div class="work-thumb placeholder-thumb"></div>
-                                <h3 class="work-title">Veil</h3>
-                                <p class="work-caption">
-                                    “A question that never fully appears.”
-                                </p>
-                            </article>
+                <AboutMe client:load />
 
-                            <article class="work-item">
-                                <div class="work-thumb placeholder-thumb"></div>
-                                <h3 class="work-title">Loop</h3>
-                                <p class="work-caption">
-                                    “Light returning to the same hesitation.”
-                                </p>
-                            </article>
-                        </div>
-                    </div>
-                </section>
-
-                {/* SilentGuard & AgentFlow */}
-                <section id="silentguard-agentflow" class="section sa-section">
-                    <div class="section-inner">
-                        <h2 class="section-title">SilentGuard &amp; AgentFlow</h2>
-                        <div class="section-body sa-layout">
-                            <div class="sa-block">
-                                <h3 class="sa-title">SilentGuard</h3>
-                                <p>
-                                    A quiet security layer that observes, traces, and responds
-                                    without theatrics — engineering as a form of calm vigilance.
-                                </p>
-                            </div>
-                            <div class="sa-block">
-                                <h3 class="sa-title">AgentFlow</h3>
-                                <p>
-                                    A structural framework for orchestrating agents and processes,
-                                    designed as a diagram of how thought might move through a machine.
-                                </p>
-                            </div>
-                            <p class="sa-note">
-                                Together, they form the engineering backbone of my artistic practice — 
-                                where infrastructure and intuition coexist.
-                            </p>
-                        </div>
-                    </div>
-                </section>
-
-                {/* Notice */}
-                <section id="notice" class="section notice-section">
-                    <div class="section-inner">
-                        <h2 class="section-title">Notice</h2>
-                        <div class="notice-list">
-                            <article class="notice-item">
-                                <div class="notice-meta">
-                                    <span class="notice-type">Award</span>
-                                    <span class="notice-date">2025 —</span>
-                                </div>
-                                <p class="notice-text">
-                                    Ongoing submissions to international digital design and art awards.
-                                </p>
-                            </article>
-
-                            <article class="notice-item">
-                                <div class="notice-meta">
-                                    <span class="notice-type">Exhibition</span>
-                                    <span class="notice-date">Upcoming</span>
-                                </div>
-                                <p class="notice-text">
-                                    Preparing site-specific installations that translate poetic interfaces into physical space.
-                                </p>
-                            </article>
-
-                            <article class="notice-item">
-                                <div class="notice-meta">
-                                    <span class="notice-type">Collaboration</span>
-                                    <span class="notice-date">Open</span>
-                                </div>
-                                <p class="notice-text">
-                                    Available for collaborations with galleries, art directors, and agencies exploring new interfaces between humans and AI.
-                                </p>
-                            </article>
-                        </div>
-                    </div>
-                </section>
-
-                {/* Contact */}
-                <section id="contact" class="section contact-section">
-                    <div class="section-inner">
-                        <h2 class="section-title">Connect</h2>
-                        <div class="section-body">
-                            <p>
-                                For exhibitions, commissions, or conceptual collaborations,
-                                please use the form below.
-                            </p>
-                            <a
-                                class="contact-button"
-                                href="https://tally.so/r/mRXxjj"
-                                target="_blank"
-                                rel="noreferrer"
-                            >
-                                Open Contact Form
-                            </a>
-                        </div>
-                    </div>
-                </section>
+                <Contact client:load />
             </main>
 
             <footer class="site-footer">
                 <div class="footer-inner">
                     <span class="footer-name">MeltLight</span>
                     <span class="footer-role">AI Concept Artist / Conceptual Engineer</span>
+
+                    <div class="footer-social">
+                        <a href="https://x.com/UtsumiYusuke" target="_blank">X</a>
+                        <a href="https://www.instagram.com/yusukeutsumi_meltlight/" target="_blank">IG</a>
+                        <a href="https://www.behance.net/meltlight-utsumi/projects" target="_blank">BE</a>
+                    </div>
                 </div>
             </footer>
         </div>

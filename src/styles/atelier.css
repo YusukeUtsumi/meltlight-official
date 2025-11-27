@@ -1,0 +1,97 @@
+/* =====================================
+   Atelier / Works Section
+   ===================================== */
+
+.works-section {
+    padding-top: clamp(120px, 20vh, 240px);
+    padding-bottom: clamp(140px, 26vh, 320px);
+
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 1.6s ease-out, transform 1.6s ease-out;
+}
+
+.works-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Container */
+.atelier-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+/* Title */
+.works-section .section-title {
+    text-align: center;
+    letter-spacing: 0.32em;
+    opacity: 0.65;
+    margin-bottom: 56px;
+}
+
+/* Grid */
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 48px;
+}
+
+/* Cards */
+.work-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+}
+
+/* Thumbnail area */
+.work-thumb {
+    width: 100%;
+    padding-top: 68%;
+    border-radius: 14px;
+    position: relative;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    overflow: hidden;
+}
+
+/* Coming soon */
+.coming-soon {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.2rem;
+    opacity: 0.55;
+    color: rgba(232, 197, 184, 0.65);
+    letter-spacing: 0.05em;
+}
+
+/* Titles */
+.work-title {
+    font-size: 0.95rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    opacity: 0.78;
+}
+
+/* Captions */
+.work-caption {
+    font-family: "Cormorant Garamond", "Times New Roman", serif;
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 1.9;
+    opacity: 0.88;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+    .works-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+}

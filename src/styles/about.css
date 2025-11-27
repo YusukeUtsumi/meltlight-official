@@ -1,7 +1,133 @@
-.about-section .role {
-    font-size: 0.95rem;
-    letter-spacing: 0.12em;
+/* =====================================
+   About Section
+   ===================================== */
+
+.about-section {
+    padding-top: clamp(96px, 18vh, 180px);
+    padding-bottom: clamp(140px, 28vh, 320px);
+
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 1.6s ease-out, transform 1.6s ease-out;
+}
+
+.about-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about-inner {
+    max-width: 840px;
+    margin: 0 auto;
+}
+
+/* タイトルは共通 .section-title をそのまま使う想定 */
+
+.about-section .section-body {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 28px;
+}
+
+/* 肩書き行 */
+.about-role {
+    font-family: "Cormorant Garamond", "Times New Roman", serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.24em;
+    opacity: 0.7;
+}
+
+/* 本文 */
+.about-section p {
+    font-size: 0.98rem;
+    line-height: 1.9;
+    opacity: 0.9;
+}
+
+.about-subtitle {
+    margin-top: 36px;
+    font-size: 0.85rem;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
-    opacity: 0.8;
-    margin-bottom: 16px;
+    opacity: 0.6;
+}
+
+.about-awards {
+    list-style: none;
+    padding: 0;
+    margin-top: 12px;
+}
+
+.about-awards li {
+    font-family: "Cormorant Garamond", "Times New Roman", serif;
+    font-weight: 300;
+    font-size: 0.95rem;
+    letter-spacing: 0.24em;
+    line-height: 1.7;
+    opacity: 0.88;
+}
+
+/* ポートフォリオボタン（左寄せ） */
+.about-portfolio-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 32px;
+    padding: 12px 52px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    text-decoration: none;
+    font-size: 0.82rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    width: 35%;
+
+    background:
+        radial-gradient(
+            circle at 0% 0%,
+            rgba(232, 197, 184, 0.2),
+            transparent 55%
+        ),
+        rgba(18, 18, 18, 0.96);
+    color: #f5f5f5;
+    transition: 0.35s ease-out;
+}
+
+.about-portfolio-button:hover {
+    border-color: rgba(232, 197, 184, 0.8);
+    box-shadow: 0 0 16px rgba(232, 197, 184, 0.2);
+    transform: translateY(-2px);
+}
+
+.about-portfolio-button:active {
+    transform: translateY(0);
+    box-shadow: 0 0 10px rgba(232, 197, 184, 0.18);
+}
+
+/* Mobile */
+@media (max-width: 720px) {
+    .about-section {
+        padding-top: 18vh;
+        padding-bottom: 22vh;
+    }
+
+    .about-section .section-body {
+        gap: 14px;
+    }
+
+    .about-role {
+        font-size: 0.82rem;
+        letter-spacing: 0.22em;
+    }
+
+    .about-section p {
+        font-size: 0.94rem;
+        line-height: 1.8;
+    }
+
+    .about-portfolio-button {
+        width: 100%;
+        padding: 12px 0;
+    }
 }

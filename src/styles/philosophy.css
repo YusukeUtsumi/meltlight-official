@@ -1,0 +1,72 @@
+/* =====================================
+   Philosophy Section
+   ===================================== */
+
+.philosophy-section {
+    /* 余白を画面サイズに応じて変化させる */
+    padding-top: clamp(120px, 20vh, 240px);
+    padding-bottom: clamp(140px, 26vh, 320px);
+
+    /* フェードインの初期状態（非表示） */
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 1.6s ease-out, transform 1.6s ease-out;
+}
+
+/* IntersectionObserver で付くクラス */
+.philosophy-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.philosophy-inner {
+    text-align: center;
+}
+
+/* タイトル */
+.philosophy-title {
+    font-size: 0.78rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-bottom: 20px;
+}
+
+/* 下に薄い線 */
+.philosophy-divider {
+    width: 48px;
+    height: 1px;
+    margin: 0 auto 40px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* 本文（セリフ体 + ローズゴールドのシャドウ） */
+.philosophy-text {
+    font-family: "Cormorant Garamond", "Times New Roman", serif;
+    font-weight: 300;
+    font-size: clamp(1.25rem, 2.3vw, 1.85rem);
+    line-height: 2.25;
+    letter-spacing: 0.08em;
+    opacity: 0.92;
+    
+    color: #f5ece5;
+    text-shadow:
+        0 0 20px rgba(232, 197, 184, 0.62),
+        0 0 46px rgba(232, 197, 184, 0.43);
+}
+
+/* Mobile */
+@media (max-width: 720px) {
+    .philosophy-section {
+        padding-top: 18vh;
+        padding-bottom: 20vh;
+    }
+
+    .philosophy-text {
+        font-size: 1.15rem;
+        line-height: 2.05;
+        text-shadow:
+            0 0 4px rgba(232, 197, 184, 0.25),
+            0 0 12px rgba(232, 197, 184, 0.12);
+    }
+}
