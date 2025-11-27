@@ -27,6 +27,7 @@ export default function AboutMe() {
                 <h2 className="section-title">About</h2>
                 <div className="section-body">
                     <p className="about-role">
+                        Yusuke Utsumi<br/>
                         AI Concept Artist / Conceptual Engineer<br/>
                         TopDesignKing jury member
                     </p>
