@@ -6,5 +6,5 @@ import react from '@astrojs/react';
 // https://astro.build/config
 export default defineConfig({
   integrations: [react()],
-  site: "https://github.com/YusukeUtsumi/meltlight-official/",
+  site: "https://studio.meltlight.art/",
 });
