@@ -1,10 +1,11 @@
-// @ts-check
+// astro.config.mjs
 import { defineConfig } from 'astro/config';
-
+import staticAdapter from '@astrojs/adapter-static';
 import react from '@astrojs/react';
 
-// https://astro.build/config
 export default defineConfig({
-  integrations: [react()],
-  site: "https://studio.meltlight.art/",
+    integrations: [react()],
+    output: 'static',
+    adapter: staticAdapter(),
+    site: 'https://studio.meltlight.art/',
 });
