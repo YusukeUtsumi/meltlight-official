@@ -1,11 +1,18 @@
-// astro.config.mjs
+// @ts-check
 import { defineConfig } from 'astro/config';
-import staticAdapter from '@astrojs/adapter-static';
 import react from '@astrojs/react';
+import { fileURLToPath } from 'node:url';
 
 export default defineConfig({
-    integrations: [react()],
-    output: 'static',
-    adapter: staticAdapter(),
-    site: 'https://studio.meltlight.art/',
+  site: 'https://studio.meltlight.art', // ← 独自ドメイン
+  base: '/',                     // ← ルート配信なら '/'（もしくは項目ごと削除でもOK）
+  output: 'static',
+  integrations: [react()],
+  vite: {
+    resolve: {
+      alias: {
+        '@': fileURLToPath(new URL('./src', import.meta.url))
+      }
+    }
+  }
 });
