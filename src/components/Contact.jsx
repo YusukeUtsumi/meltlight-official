@@ -24,7 +24,7 @@ export default function Contact() {
     return (
         <section id="contact" className="section contact-section">
             <div className="section-inner contact-inner">
-                <h2 className="section-title">Connect</h2>
+                <h2 className="section-title">Contact</h2>
                 <div className="contact-body">
                     <p className="contact-text">
                         For exhibitions, commissions, or conceptual collaborations,<br />
@@ -36,7 +36,7 @@ export default function Contact() {
                         target="_blank"
                         rel="noreferrer"
                     >
-                        Connect
+                        Contact
                     </a>
                 </div>
             </div>

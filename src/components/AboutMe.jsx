@@ -33,8 +33,8 @@ export default function AboutMe() {
                     </p>
                     <h3 className="about-subtitle">Selected Recognitions</h3>
                     <ul className="about-awards">
+                        <li>Web Guru Awards — Guru of the day</li>
                         <li>TopDesignKing — Nominee</li>
-                        <li>Web Guru Awards — Nominee</li>
                         <li>BestCSS — Gallery Featured</li>
                         <li>CSSLight — Gallery Featured</li>
                     </ul>

@@ -1,0 +1,87 @@
+/* =====================================
+   Price Section（Table Style）
+   ===================================== */
+
+.price-section {
+    padding-top: clamp(140px, 22vh, 280px);
+    padding-bottom: clamp(160px, 28vh, 340px);
+
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 1.6s ease-out, transform 1.6s ease-out;
+}
+
+.price-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.price-inner {
+    text-align: center;
+}
+
+/* Title */
+.price-title {
+    font-size: 0.78rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-bottom: 20px;
+}
+
+.price-divider {
+    width: 48px;
+    height: 1px;
+    margin: 0 auto 96px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* Table */
+.price-table {
+    max-width: 820px;
+    margin: 0 auto;
+}
+
+.price-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+
+    padding: 26px 6px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.price-row:last-child {
+    border-bottom: none;
+}
+
+.price-category {
+    font-family: "Cormorant Garamond", "Times New Roman", serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    opacity: 0.78;
+    text-align: left;
+}
+
+.price-value {
+    font-family: "Cormorant Garamond", "Times New Roman", serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.22em;
+    opacity: 0.92;
+    text-align: right;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+    .price-row {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        text-align: center;
+    }
+
+    .price-category,
+    .price-value {
+        text-align: center;
+    }
+}
